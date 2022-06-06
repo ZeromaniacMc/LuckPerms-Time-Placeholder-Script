@@ -1,6 +1,7 @@
 /*------------------------------ LP - TIME Ver. 2.0 ------------------------------
 
-If you are using luckperms and the placeholder for expiration time of either of the two options given by LuckPerms, you might also find it annoying that you cannot shorten the time nor translate hours, minutes etc into your language. This javascript does exactly that!
+If you are using luckperms and the placeholder for expiration time of either of the two options given by LuckPerms, you might also find it annoying that you cannot 
+shorten the time nor translate hours, minutes etc into your language. This javascript does exactly that!
 Since version 2.0, this script can also recalculate the time into a different unit as well as automatically detect singular and plural for the words used.
 
 ----------------------------------CREDITS----------------------------------
@@ -41,7 +42,8 @@ time:
   ➢ %javascript_time_inherited_expiry_time,essentials.gamemode.*%
 
 EXTRA HINT: Groups in LuckPerms are also simply just permissions like group.vip for example! You can abuse this placeholder for these as well!
-!!! ATTENTION: Do not replace the comma in front of the <permission> with an underscore! We really want you to use the comma, don't try to be a hero and use an underscore!!!
+!!! ATTENTION: Do not replace the comma in front of the <permission> with an underscore! We really want you to use the comma, don't try to be a hero 
+and use an underscore!!!
 */
 
 
