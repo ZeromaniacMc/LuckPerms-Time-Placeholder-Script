@@ -14,6 +14,10 @@ However, we changed that in this version!
 
 ➢ Define a singular and plural word to use for each unit.
 
+➢ Display any symbol/text if a permission is infinite.
+
+➢ Define an output if the user does not have the permission in question.
+
 ➢ Cut off parts you do not wish to see.
 
 
