@@ -1,48 +1,35 @@
 /*------------------------------ LP - TIME Ver. 2.0 ------------------------------
-
-If you are using luckperms and the placeholder for expiration time of either of the two options given by LuckPerms, you might also find it annoying that you cannot 
+If you are using luckperms and the placeholder for expiration time of either of the two options given by LuckPerms, you might also find it annoying that you cannot
 shorten the time nor translate hours, minutes etc into your language. This javascript does exactly that!
 Since version 2.0, this script can also recalculate the time into a different unit as well as automatically detect singular and plural for the words used.
-
 ----------------------------------CREDITS----------------------------------
-
 Made by: MidnightCore#6666 & Zeromaniac#0001
-
 ---------------------------------- SUPPORT ----------------------------------
-
 If you follow the instructions given here, you are unlikely to need support. However, if you find any bugs, we would still appreciate if you could let
 us know about them. You're encouraged to try to debug it yourself first. Note that if you changed the code below the settings, you will be denied support from us.
 For support please either ask HelpChat Support (https://discord.gg/FtArYRQ) who are generally very knowledgable and helpful with issues regarding their plugin
 PlaceholderAPI or visit my support discord at https://discord.gg/NU6PFtsGRr.
-
 ------------------------------THINGS YOU NEED:------------------------------
-
 1.) PlaceholderAPI (2.11.1) plugin
 2.) PAPI javascript [2.1.0] expansion (/papi ecloud download javascript & /papi reload)
   Do NOT use /reload or plugman to enable Placeholder API!
-
 ------------------------------INSTALLATION:------------------------------
-
 1.) Drag and drop this whole document as is into the following folder of your server: plugins -> PlaceholderAPI -> javascripts
 This file's name has to match with what you do in the next step, so make sure this file is called 'lptime.js'.
 2.) Now you need to register this javascript in plugins -> PlaceholderAPI -> javascript_placeholders.yml
 Into that file, add the following two lines AS IS:
-
 time:
   file: lptime.js
-
 3.)Ingame, do /papi reload.
 4.) Now you can use the placeholder as follows:
   To convert %luckperms_expiry_time_<permission>% USE %javascript_time_expiry_time,<permission>%
   To convert %luckperms_inherited_expiry_time% USE %javascript_time_inherited_expiry_time,<permission>%
-
   Examples:
   ➢ %javascript_time_expiry_time,essentials.fly%
   ➢ %javascript_time_expiry_time,group.vip%
   ➢ %javascript_time_inherited_expiry_time,essentials.gamemode.*%
-
 EXTRA HINT: Groups in LuckPerms are also simply just permissions like group.vip for example! You can abuse this placeholder for these as well!
-!!! ATTENTION: Do not replace the comma in front of the <permission> with an underscore! We really want you to use the comma, don't try to be a hero 
+!!! ATTENTION: Do not replace the comma in front of the <permission> with an underscore! We really want you to use the comma, don't try to be a hero
 and use an underscore!!!
 */
 
@@ -73,6 +60,12 @@ var translations = {
 // "m" will convert years, months, weeks, days and hours into minutes.
 // "s" will convert years, months, weeks, days, hours and minutes into seconds.
 var defaultConverterSettings = "d";
+
+// If the permission you are checking against is an infinite permission, the following symbol will be shown.
+var infinite = "∞";
+
+// If the user does not have the permission you are checking against, this option will be shown.
+var noPerm = "✘";
 
 
 // This setting lets you completely cut off parts of the placeholder. Many people want to simply not show the seconds to make the output smaller and
@@ -109,6 +102,15 @@ function luckperms_time(){
     if(args.length === 0 || args.length === 1) {
       return "&cUsage: '"+"%"+"javascript_time_inherited_expiry_time,<permission>"+"%"+"' or '"+"%"+"javascript_time_expiry_time,<permission>"+"%"+"'"; }
     time = PlaceholderAPI.static.setPlaceholders(BukkitPlayer, "%" + 'luckperms_' + args[0] + '_' + args[1] + "%");
+
+    if(BukkitPlayer.hasPermission(args[1])) {
+      if(time.length == 0) {
+        return infinite;
+      }
+    } else {
+      return noPerm;
+    }
+
     splitter();
     if(defaultConverterSettings && arrayIncludes(keys, defaultConverterSettings)){
         converter(defaultConverterSettings);}
