@@ -3,7 +3,7 @@ If you are using luckperms and the placeholder for expiration time of either of 
 shorten the time nor translate hours, minutes etc into your language. This javascript does exactly that!
 Since version 2.0, this script can also recalculate the time into a different unit as well as automatically detect singular and plural for the words used.
 ----------------------------------CREDITS----------------------------------
-Made by: MidnightCore#6666 & Zeromaniac#0001
+Made by: MidnightCore#4890 & Zeromaniac#0335
 ---------------------------------- SUPPORT ----------------------------------
 If you follow the instructions given here, you are unlikely to need support. However, if you find any bugs, we would still appreciate if you could let
 us know about them. You're encouraged to try to debug it yourself first. Note that if you changed the code below the settings, you will be denied support from us.
@@ -12,14 +12,17 @@ PlaceholderAPI or visit my support discord at https://discord.gg/NU6PFtsGRr.
 ------------------------------THINGS YOU NEED:------------------------------
 1.) PlaceholderAPI (2.11.1) plugin
 2.) PAPI javascript [2.1.0] expansion (/papi ecloud download javascript & /papi reload)
-  Do NOT use /reload or plugman to enable Placeholder API!
+  Do NOT use /reload or plugman to enable Placeholder API! If the download command for this does not work, you should open
+  google, find the expansion and install it manually. If you need help with that, please ask PAPI support.
 ------------------------------INSTALLATION:------------------------------
 1.) Drag and drop this whole document as is into the following folder of your server: plugins -> PlaceholderAPI -> javascripts
 This file's name has to match with what you do in the next step, so make sure this file is called 'lptime.js'.
 2.) Now you need to register this javascript in plugins -> PlaceholderAPI -> javascript_placeholders.yml
 Into that file, add the following two lines AS IS:
+
 time:
   file: lptime.js
+  
 3.)Ingame, do /papi reload.
 4.) Now you can use the placeholder as follows:
   To convert %luckperms_expiry_time_<permission>% USE %javascript_time_expiry_time,<permission>%
@@ -29,8 +32,7 @@ time:
   ➢ %javascript_time_expiry_time,group.vip%
   ➢ %javascript_time_inherited_expiry_time,essentials.gamemode.*%
 EXTRA HINT: Groups in LuckPerms are also simply just permissions like group.vip for example! You can abuse this placeholder for these as well!
-!!! ATTENTION: Do not replace the comma in front of the <permission> with an underscore! We really want you to use the comma, don't try to be a hero
-and use an underscore!!!
+!!! ATTENTION: Do not replace the comma in front of the <permission> with an underscore! We really want you to use the comma, don't try to be a hero!!!
 */
 
 
