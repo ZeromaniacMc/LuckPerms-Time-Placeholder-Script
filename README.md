@@ -25,13 +25,4 @@ Please follow the installation instructions given in the file itself.
 We are painfully aware that overusage of javascripts or scripts in general may or may not impact performance so we would like to encourage you
 to be careful if you are a heavy script user. 
 
-We do not plan to make any further changes to this script unless future versions of either PlaceholderAPI, Javascript or Minecraft itself break it.
-Please do not contact us with feature requests.
-However, we do hope that you will be happy with it. Feel free to share <3
-
-**Credits:**
-
-
-➢ MidnightCore
-
-➢ Zeromaniac
+I no longer play Minecraft, so this script has been abandoned. If you want to update it and publish a fresher version, feel free to do so. All I ask is to not monetize this script or edits of it.
